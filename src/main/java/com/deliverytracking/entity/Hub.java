@@ -31,17 +31,16 @@ public class Hub {
     private double longitude;
 
     @Column(nullable = false)
-    private boolean active = true;      // ADD — was missing, setActive() was failing
+    private boolean active = true;     
     
     @OneToMany(mappedBy = "hub", fetch = FetchType.LAZY)
-    @JsonIgnore    // ADD — stops Hub from serializing its staff list
+    @JsonIgnore   
     private List<User> staff;
     
-    @OneToOne // or @ManyToOne depending on your logic
+    @OneToOne 
     @JoinColumn(name = "manager_id")
     @JsonIgnore
     private User manager;
 
-//    @OneToMany(mappedBy = "hub", fetch = FetchType.LAZY)
-//    private List<User> staff;
+
 }
