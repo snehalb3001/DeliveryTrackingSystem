@@ -30,9 +30,9 @@ public class ShipmentRoute {
     @ManyToOne
     private Hub hub;
 
-    private int stepOrder;          // 0 = origin hub, 1 = first intermediate, etc.
-    private boolean isUnlocked;     // only step 0 starts unlocked
-    private String status;          // PENDING, IN_TRANSIT, ARRIVED, DELIVERED
+    private int stepOrder;          
+    private boolean isUnlocked;     
+    private String status;         
     private LocalDateTime updatedAt;
     private Long updatedByUserId;
 }
